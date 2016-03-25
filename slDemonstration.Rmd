@@ -10,7 +10,7 @@ output: html_document
 In this demonstration, we will illustrate the basic functionality of the `SuperLearner` using data from the SMOCC study included in the `brokenstick` package. We will illustrate how to fit a basic Super Learner ensemble using default algorithms, as well as how to check the performance of the Super Learner relative to competitor methods. We also illustrate how user-written algorithms can be incorporated into Super Learner estimation and how screening algorithms can also be incorporated.
 
 ## Basic Super Learner Functionality
-We being by illustrating a simple execution of the Super Learner function using the SMOCC data and default algorithms. Start by loading the necessary packages:
+We begin by illustrating a simple execution of the Super Learner function using the SMOCC data and default algorithms. Start by loading the necessary packages:
 ```{r packages, message=FALSE}
 require(hbgd)
 require(SuperLearner)
