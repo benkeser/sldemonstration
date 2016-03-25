@@ -11,7 +11,7 @@ In this demonstration, we will illustrate the basic functionality of the `SuperL
 
 ## Basic Super Learner Functionality
 We begin by illustrating a simple execution of the Super Learner function using the SMOCC data and default algorithms. Start by loading the necessary packages:
-```{r packages, message=FALSE}
+```{r packages, message=FALSE, warning=FALSE}
 require(hbgd)
 require(SuperLearner)
 ```
@@ -223,7 +223,7 @@ noInt <- function(X,...){
 }
 ```
 
-Now we can fit the SuperLearner using the three original algorithms each with and without the interaction. The call to `SuperLearner` is nearly identical; however, we now specify `SL.library` as a list, where each component is a vector of `c(screeningAlg, predictionAlg)`. To include the interaction, we specify the `All` screening algorithm that is included in the `SuperLearner` package.
+Now we can fit the SuperLearner using the three original algorithms each with and without the interaction. The call to `SuperLearner` is nearly identical; however, we now specify `SL.library` as a list, where each component is a vector of the form `c(predictionAlgorithm,screeningAlgorithm)`. To include the interaction, we specify the `All` screening algorithm that is included in the `SuperLearner` package.
 ```{r intSL, cache=TRUE, warning=FALSE}
 set.seed(12516) 
 

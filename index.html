@@ -123,9 +123,8 @@ $(document).ready(function () {
 <div id="basic-super-learner-functionality" class="section level2">
 <h2>Basic Super Learner Functionality</h2>
 <p>We begin by illustrating a simple execution of the Super Learner function using the SMOCC data and default algorithms. Start by loading the necessary packages:</p>
-<pre class="r"><code>require(hbgd)</code></pre>
-<pre><code>## Warning: package 'datadr' was built under R version 3.2.4</code></pre>
-<pre class="r"><code>require(SuperLearner)</code></pre>
+<pre class="r"><code>require(hbgd)
+require(SuperLearner)</code></pre>
 <p>For consistency, we will begin by formatting the SMOCC data to be compatible with the <code>hbgd</code> package:</p>
 <pre class="r"><code>smcFull &lt;- brokenstick::smocc.hgtwgt
 # fix subjid and agedays names
@@ -411,7 +410,7 @@ slPredNew2</code></pre>
 <pre class="r"><code>noInt &lt;- function(X,...){
   return(c(TRUE,TRUE,FALSE))
 }</code></pre>
-<p>Now we can fit the SuperLearner using the three original algorithms each with and without the interaction. The call to <code>SuperLearner</code> is nearly identical; however, we now specify <code>SL.library</code> as a list, where each component is a vector of <code>c(screeningAlg, predictionAlg)</code>. To include the interaction, we specify the <code>All</code> screening algorithm that is included in the <code>SuperLearner</code> package.</p>
+<p>Now we can fit the SuperLearner using the three original algorithms each with and without the interaction. The call to <code>SuperLearner</code> is nearly identical; however, we now specify <code>SL.library</code> as a list, where each component is a vector of the form <code>c(predictionAlgorithm,screeningAlgorithm)</code>. To include the interaction, we specify the <code>All</code> screening algorithm that is included in the <code>SuperLearner</code> package.</p>
 <pre class="r"><code>set.seed(12516) 
 
 # Fit the Super Learner
